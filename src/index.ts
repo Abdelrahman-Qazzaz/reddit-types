@@ -134,3 +134,8 @@ export interface Comment {
     child_comments: number;
   };
 }
+
+export const FileUploadFieldNamesEnum = Object.freeze({
+  SINGLE: "single",
+  MULTIPLE: "multiple",
+});

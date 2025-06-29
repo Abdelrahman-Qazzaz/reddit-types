@@ -46,6 +46,11 @@ const comment: RedditComment = {
    ```bash
    npm run build
    ```
+4. Publish the package:
+
+```bash
+ npm publish --access public
+```
 
 ## License
 
