@@ -1,3 +1,17 @@
+export interface PostVote {
+  owner_username: string;
+  post_id: number;
+  is_upvote: boolean;
+  created_at: Date | null;
+}
+
+export interface CommentVote {
+  owner_username: string;
+  comment_id: number;
+  is_upvote: boolean;
+  created_at: Date | null;
+}
+
 export interface User {
   username: string;
   email: string;
@@ -6,12 +20,7 @@ export interface User {
   created_at: Date | null;
   pfp_url: string | null;
   privacy_settings: "public" | "friends" | "private";
-  comment_votes: Array<{
-    owner_username: string;
-    comment_id: number;
-    is_upvote: boolean;
-    created_at: Date | null;
-  }>;
+  comment_votes: CommentVote[];
   comments: Comment[];
   following: Array<{
     follower: string;
@@ -23,12 +32,7 @@ export interface User {
     followed: string;
     created_at: Date | null;
   }>;
-  post_votes: Array<{
-    owner_username: string;
-    post_id: number;
-    is_upvote: boolean;
-    created_at: Date | null;
-  }>;
+  post_votes: PostVote[];
   posts: Post[];
   subreddits: Subreddit[];
   _count: {
@@ -67,19 +71,9 @@ export interface Post {
   created_at: Date | null;
   owner_username: string;
   subreddit_name: string;
-  comment_votes: Array<{
-    owner_username: string;
-    post_id: number;
-    is_upvote: boolean;
-    created_at: Date | null;
-  }>;
+  comment_votes: PostVote[];
   comments: Array<Comment>;
-  post_votes: Array<{
-    owner_username: string;
-    post_id: number;
-    is_upvote: boolean;
-    created_at: Date | null;
-  }>;
+  post_votes: PostVote[];
   subreddit?: Subreddit;
   _count: {
     comment_votes: number;
@@ -98,12 +92,7 @@ export interface Comment {
   post_id: number;
   parent_id: number | null;
   child_comments: Comment[];
-  comment_votes: Array<{
-    owner_username: string;
-    comment_id: number;
-    is_upvote: boolean;
-    created_at: Date | null;
-  }>;
+  comment_votes: CommentVote[];
   parent_comment: Comment | null;
   post: Post;
   owner: User;
