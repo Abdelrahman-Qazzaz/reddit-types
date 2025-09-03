@@ -12,15 +12,7 @@ export interface User {
     is_upvote: boolean;
     created_at: Date | null;
   }>;
-  comments: Array<{
-    id: number;
-    content: string | null;
-    media_urls: string[];
-    parent_id: number | null;
-    created_at: Date | null;
-    owner_username: string;
-    post_id: number;
-  }>;
+  comments: Comment[];
   following: Array<{
     follower: string;
     followed: string;
@@ -37,22 +29,8 @@ export interface User {
     is_upvote: boolean;
     created_at: Date | null;
   }>;
-  posts: Array<{
-    id: number;
-    title: string;
-    content: string | null;
-    media_urls: string[];
-    created_at: Date | null;
-    owner_username: string;
-    subreddit_name: string;
-  }>;
-  subreddits: Array<{
-    name: string;
-    description: string | null;
-    icon_url: string | null;
-    created_at: Date | null;
-    owner_username: string;
-  }>;
+  posts: Post[];
+  subreddits: Subreddit[];
   _count: {
     comment_votes: number;
     comments: number;
