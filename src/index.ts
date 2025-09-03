@@ -21,12 +21,12 @@ export interface User {
     owner_username: string;
     post_id: number;
   }>;
-  follows_follows_followedTousers: Array<{
+  following: Array<{
     follower: string;
     followed: string;
     created_at: Date | null;
   }>;
-  follows_follows_followerTousers: Array<{
+  followers: Array<{
     follower: string;
     followed: string;
     created_at: Date | null;
@@ -56,8 +56,8 @@ export interface User {
   _count: {
     comment_votes: number;
     comments: number;
-    follows_follows_followedTousers: number;
-    follows_follows_followerTousers: number;
+    following: number;
+    followers: number;
     post_votes: number;
     posts: number;
     subreddits: number;
