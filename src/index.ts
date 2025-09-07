@@ -71,15 +71,7 @@ export interface Post {
   created_at: Date | null;
   owner_username: string;
   subreddit_name: string;
-  comment_votes: PostVote[];
-  comments: Array<Comment>;
-  post_votes: PostVote[];
   subreddit?: Subreddit;
-  _count: {
-    comment_votes: number;
-    comments: number;
-    post_votes: number;
-  };
 }
 
 export interface Comment {
