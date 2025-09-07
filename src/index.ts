@@ -91,10 +91,6 @@ export interface Comment {
   owner_username: string;
   post_id: number;
   parent_id: number | null;
-  child_comments: Comment[];
-  comment_votes: CommentVote[];
-  parent_comment: Comment | null;
-  post: Post;
   owner: User;
   _count: {
     comment_votes: number;
