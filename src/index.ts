@@ -70,7 +70,7 @@ export interface Post {
   media_urls: string[];
   created_at: Date | null;
   owner_username: string;
-  subreddit_name: string;
+  subreddit_name: string | null;
   subreddit?: Subreddit;
 }
 
