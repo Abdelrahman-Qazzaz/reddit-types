@@ -80,7 +80,6 @@ export interface Post {
     comments: number;
     post_votes: number;
   };
-  owner: User;
 }
 
 export interface Comment {
@@ -91,11 +90,6 @@ export interface Comment {
   owner_username: string;
   post_id: number;
   parent_id: number | null;
-  owner: User;
-  _count: {
-    comment_votes: number;
-    child_comments: number;
-  };
 }
 
 export const FileUploadFieldNamesEnum = Object.freeze({
