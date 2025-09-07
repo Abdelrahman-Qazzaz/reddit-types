@@ -47,20 +47,11 @@ export interface User {
 }
 
 export interface Subreddit {
-  id: number;
   name: string;
   description: string | null;
   icon_url: string | null;
   created_at: Date | null;
   owner_username: string;
-  _count: {
-    posts: number;
-    subscribers: number;
-  };
-  posts: Post[];
-  followers: User[];
-  owner: User;
-  moderators: User[];
 }
 
 export interface Post {
